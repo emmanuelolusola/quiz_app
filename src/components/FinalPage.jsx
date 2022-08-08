@@ -6,6 +6,7 @@ const FinalPage = ({
   score,
   setShowFinalPage,
   setShowStartingPage,
+  setQuestionIndex,
   topScore,
   setTopScore,
   setScore,
@@ -21,6 +22,7 @@ const FinalPage = ({
     setShowStartingPage(true);
     setScore(0);
     setUsername("");
+    setQuestionIndex(0);
   };
 
   return (

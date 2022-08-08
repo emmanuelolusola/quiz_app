@@ -1,8 +1,9 @@
 import "./App.css";
-import QuestionsPage from "./components/QuestionsPage";
+import Question from "./components/Question";
 import StartingPage from "./components/StartingPage";
 import FinalPage from "./components/FinalPage";
 import { useState } from "react";
+import { questions } from "./questions";
 
 function App() {
   const [showStartingPage, setShowStartingPage] = useState(true);
@@ -12,6 +13,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
   const [username, setUsername] = useState("");
+  const [questionIndex, setQuestionIndex] = useState(0);
 
   return (
     <>
@@ -25,11 +27,14 @@ function App() {
         />
       )}
       {showQuestionsPage && (
-        <QuestionsPage
+        <Question
           score={score}
           setScore={setScore}
           setShowQuestionsPage={setShowQuestionsPage}
           setShowFinalPage={setShowFinalPage}
+          questions={questions}
+          questionIndex={questionIndex}
+          setQuestionIndex={setQuestionIndex}
         />
       )}
       {showFinalPage && (
@@ -42,6 +47,7 @@ function App() {
           setShowFinalPage={setShowFinalPage}
           username={username}
           setUsername={setUsername}
+          setQuestionIndex={setQuestionIndex}
         />
       )}
     </>

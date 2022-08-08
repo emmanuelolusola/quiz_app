@@ -20,7 +20,7 @@ const Question = ({
       setQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       if (isCorrect) {
-        setScore((score) => score);
+        setScore((score) => (score += 100));
       }
       setShowQuestionsPage(false);
       setShowFinalPage(true);
